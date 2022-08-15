@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.com">
+    <head>
+        <title>Signup</title>
+     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+             <link rel="stylesheet" th:href="@{css/style.css}"> 
+    </head>
+    <body>
+
+            <form class="form-signin" th:action="@{/signup}" method="post">
+                <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72" />
+                <h1 class="h3 mb-3 font-weight-normal">Signup Here</h1>
+<section class="vh-100" style="background-color: #eee;">
+  <div class="container h-100">
+                <div th:if="${param.error}">
+                    Invalid email and password.
+                </div>
+                <div th:if="${param.logout}">
+                    You have been logged out.
+                </div>
+                <label for="inputFullname" class="sr-only">Full Name</label>
+                <input type="text" name="fullname" id="inputEmail" class="form-control" placeholder="Fullname" required="" /><br>
+
+                <label for="inputUsername" class="sr-only">Username</label>
+                <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Username" required="" /><br>
+
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required="" /><br>
+
+
+
+  <div class="g-recaptcha" 
+data-sitekey="6LcjIiohAAAAALqh36JVW3CAnNEyQ6cyTUlru5WD">
+ </div>
+ 
+ 
+ 
+
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+</section>
+
+            </form>
+
+            <div th:if="${message!=null}"> 
+         <span class="alert alert-danger" th:text="${message}"></span>
+              </div> 
+
+            <form class="form-signin" th:action="@{/login}" method="get">
+                <button class="btn btn-md btn-success btn-block" type="Submit">Sign In</button>
+            </form>
+        </div>
+    </body>
+</html>

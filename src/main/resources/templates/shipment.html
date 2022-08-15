@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" 
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{default}" lang="en">
+<head>
+<title>
+Create Shipment
+</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" th:href="@{css/shipment.css}">
+
+</head>
+<body>
+<div class="container">
+
+<h1>Add your shipment</h1>
+<form th:action="@{/save}" method="POST">
+
+
+<label for="shipmentNumber">shipment number:*</label>
+<input type="text" name="shipmentNumber" id="shipmentNumber" required><br>
+<br>
+<label for="containerNumber">Container number*</label>
+<input type="text" id="containerNumber" name="containerNumber" required><br>
+<br>
+
+<label for="shipmentDiscription">Shipment Discription:*</label>
+<textarea class="form-control" rows="5" cols="20" placeholder="Shipment Discription" name="shipmentDiscription" id="shipmentDiscription"></textarea><br>
+<br>
+
+<label for="routeDetails">Route Details</label>
+        <select id="drop" class="form-select" name="routeDetails" required>
+            <option>Select Route</option>
+<option>Delhi to Agra</option>
+<option>India to Amarica</option>
+<option>Nepal to Shrilanka</option>
+           <option>Jam nagar to Biging</option>
+<option>Sikandrabad to Hedrabad</option>
+        </select>
+        <br><br>
+        <br>
+        
+        <label for="goodsType">Goods Type</label>
+        <select id="drop" class="form-select" name="goodsType" required>
+            <option>Select Goods</option>
+            <option >Curtuns</option>
+            <option>Mobile</option>
+<option>Lenovo laktop</option>            
+<option>Corona Vaccine</option>
+<option>Swine flue vaccine</option>
+        </select>
+        <br>
+<        br>
+        
+        
+<div class="input-group date" id="datepicker">
+
+
+<label for="deliveryDate">Delivery Date:*</label>
+<input type="text" name="deliveryDate" id="Date" class="form-control" required>
+        <span class="input-group-append">
+          <span class="input-group-text bg-light d-block">
+            <i class="fa fa-calendar"></i>
+          </span>
+        </span>
+      </div>
+<br>
+<br>
+
+<label for="poNumber">PO Number:*</label>
+<input type="text" id="poNumber" name="poNumber" required/><br>
+<br>
+
+
+<label for="deliveryNumber">deliveryNumber*</label>
+<input type="text" id="deliveryNumber" name="deliveryNumber" required/><br>
+<br>
+
+<label for="ndcNumber">ndcNumber:*</label>
+<input type="text" id="ndcNumber" name="ndcNumber" required/><br>
+<br>
+<label for="batch Id">Batch Id:*</label>
+<input type="text" id="batchId" name="batchId" required/><br>
+<br>
+
+
+<label for="serialNumberOfGoods">SN of Goods:*:*</label>
+<input type="text" id="serialNumberOfGoods" name="serialNumberOfGoods"required/><br><br>
+<br>
+
+<label for="device">Device</label>
+<select id="drop" class="form-select" name="device" required>
+            <option>Select Devices</option>
+            <option >SpiceJet 3accb3c</option>
+            <option >Boing01002bc</option>
+            <option>Tata1010</option>
+            <option>Mahendra</option>
+        </select>
+
+<br>
+<br>
+<button type="reset">Cancel Shipment</button>
+
+<button type="submit">Add shipment</button>
+</form>
+</div>
+</body>
+</html>
